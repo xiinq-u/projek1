@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
 :root {
+  /* Warna Utama */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111111;
+  
+  /* Brand Colors */
+  --brand-red: #dc2626; /* Red-600 */
+  --brand-dark: #0a0a0a;
+  --brand-white: #ffffff;
+  
+  /* Accent Colors */
+  --zinc-50: #fafafa;
+  --zinc-100: #f4f4f5;
+  --zinc-400: #a1a1aa;
+  --zinc-800: #27272a;
+  --zinc-900: #18181b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--brand-red);
+  --color-dark: var(--brand-dark);
+  
+  /* Font Override untuk kesan Premium & Clean */
+  --font-sans: 'Inter', 'Geist Sans', -apple-system, sans-serif;
 }
 
+/* Dark Mode Manual (Optional, jika ingin tetap dominan Hitam-Merah) */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #fafafa;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth; /* Agar navigasi ke section terasa smooth */
+}
+
+/* Custom Selection Color (Warna saat teks di-highlight) */
+::selection {
+  background-color: var(--brand-red);
+  color: white;
 }
