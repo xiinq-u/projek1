@@ -1,16 +1,18 @@
 @import "tailwindcss";
 
+/* 1. VARIABEL & KONFIGURASI */
 :root {
-  /* Warna Utama */
+  /* Core Colors */
   --background: #ffffff;
   --foreground: #111111;
   
-  /* Brand Colors */
-  --brand-red: #dc2626; /* Red-600 */
+  /* Brand Identity */
+  --brand-red: #dc2626;
+  --brand-red-dark: #7f1d1d;
+  --brand-red-light: #ef4444;
   --brand-dark: #0a0a0a;
-  --brand-white: #ffffff;
   
-  /* Accent Colors */
+  /* Neutral Accents */
   --zinc-50: #fafafa;
   --zinc-100: #f4f4f5;
   --zinc-400: #a1a1aa;
@@ -18,17 +20,6 @@
   --zinc-900: #18181b;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--brand-red);
-  --color-dark: var(--brand-dark);
-  
-  /* Font Override untuk kesan Premium & Clean */
-  --font-sans: 'Inter', 'Geist Sans', -apple-system, sans-serif;
-}
-
-/* Dark Mode Manual (Optional, jika ingin tetap dominan Hitam-Merah) */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -36,17 +27,76 @@
   }
 }
 
+/* 2. TAILWIND THEME OVERRIDE */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--brand-red);
+  --color-dark: var(--brand-dark);
+  --font-sans: 'Inter', 'Geist Sans', -apple-system, sans-serif;
+}
+
+/* 3. GLOBAL STYLES */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth; /* Agar navigasi ke section terasa smooth */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Custom Selection Color (Warna saat teks di-highlight) */
+/* Custom Text Highlight */
 ::selection {
   background-color: var(--brand-red);
-  color: white;
+  color: #ffffff;
+}
+
+/* 4. CUSTOM SCROLLBAR (INDUSTRIAL STYLE) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--brand-red), var(--brand-red-dark));
+  border-radius: 10px;
+  border: 1px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-red);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--brand-red-light);
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-red) #000000;
+}
+
+/* 5. FIX: HIDE NEXT.JS / VERCEL / NETLIFY LOGO BADGE */
+/* Ini akan menyembunyikan badge otomatis di pojok kiri/kanan bawah */
+/* Sembunyikan semua elemen portal dev/analytics di pojok kiri bawah */
+[id^="__next-"], 
+[class^="Nextjs"],
+[data-nextjs-portal],
+#nextjs-dev-overlay,
+nextjs-portal {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Jika itu logo Vercel Insights */
+div[style*="left: 0px"][style*="bottom: 0px"],
+div[style*="left: 0"][style*="bottom: 0"] {
+  display: none !important;
 }
