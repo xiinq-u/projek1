@@ -345,11 +345,11 @@ export default function Home() {
           
           <div className="mt-12 space-y-4 border-l border-zinc-800 pl-6">
             <div className="group">
-              <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest group-hover:text-red-600 transition-colors">// Email_Direct</p>
+              <p className="text-[10px] font-mono text-zinc-300 uppercase tracking-widest group-hover:text-red-600 transition-colors">// Email_Direct</p>
               <p className="text-white font-bold tracking-tight">hello@isabuilding.com</p>
             </div>
             <div className="group">
-              <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest group-hover:text-red-600 transition-colors">// Office_Location</p>
+              <p className="text-[10px] font-mono text-zinc-200 uppercase tracking-widest group-hover:text-red-600 transition-colors">// Office_Location</p>
               <p className="text-white font-bold tracking-tight">Bekasi, West Java, ID</p>
             </div>
           </div>
@@ -399,10 +399,10 @@ export default function Home() {
               Kirim Pesan
             </button>
             <div className="text-right">
-              <p className="text-[9px] font-mono text-zinc-500 uppercase leading-tight italic">
+              <p className="text-[9px] font-mono text-zinc-300 uppercase leading-tight italic">
                 *Verified ISO System
               </p>
-              <p className="text-[9px] font-mono text-zinc-500 uppercase leading-tight italic">
+              <p className="text-[9px] font-mono text-zinc-300 uppercase leading-tight italic">
                 Secured Transmission
               </p>
             </div>
