@@ -183,17 +183,14 @@ export default function PortfolioSection() {
             {/* 1. ini BAGIAN JUDUL: Ganti teks "Selected Works" dan "Portfolio Terbaru" di bawah ini */}
             <h2 className="mt-1 mb-1 text-3xl font-black uppercase leading-tight tracking-tighter text-white sm:text-5xl lg:text-6xl">
               Portfolio{" "}
-              <span
-                className="mt-1 inline-block whitespace-nowrap text-transparent sm:mt-0"
-                style={{ WebkitTextStroke: "2px #71717a" }}
-              >
-                TERBARU
+              <span className="mt-1 inline-block whitespace-nowrap text-red-600 sm:mt-0 drop-shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+                PROJECTS
               </span>
             </h2>
           </div>
           <p className="hidden text-right font-mono text-[10px] uppercase tracking-widest text-zinc-500 md:block">
-            [ ARCHIVE_V.01 ] <br />
-            <span className="text-red-600">SYS.2026</span>
+            [ WORKSHOP_ARCHIVE ] <br />
+            <span className="text-red-600">ISA.BUILDING</span>
           </p>
         </motion.div>
 

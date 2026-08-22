@@ -37,7 +37,7 @@ export default function HeroSection() {
           >
             <span className="h-2 w-2 rounded-full bg-red-600 animate-pulse" />
             <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-300">
-              Established 2026
+              Established 2022
             </span>
           </motion.div>
 
