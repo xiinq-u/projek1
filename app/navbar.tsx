@@ -36,9 +36,9 @@ export default function Navbar() {
   });
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] flex w-full justify-center p-4 sm:p-6 md:p-8 pointer-events-none">
+    <div className="pointer-events-none fixed left-0 right-0 top-0 z-[60] flex w-full justify-center p-3 sm:p-6 md:p-8">
       {/* Container Utama: Menggunakan w-[95%] di mobile agar tidak mentok layar */}
-      <div className="relative flex flex-col items-center w-[95%] sm:w-[90%] md:w-full max-w-[1100px]">
+      <div className="relative flex w-full max-w-[1100px] flex-col items-center sm:w-[90%] md:w-full">
         
         {/* MAIN NAVBAR */}
         <motion.nav
@@ -51,7 +51,7 @@ export default function Navbar() {
             maxWidth: isScrolled ? "1100px" : "200px",
           }}
           className="
-            pointer-events-auto relative flex items-center px-4 sm:px-6 overflow-hidden
+            pointer-events-auto relative flex w-full items-center overflow-hidden px-3 sm:px-6
             shadow-[0_20px_50px_rgba(0,0,0,0.15)] backdrop-blur-2xl border rounded-full
             bg-white/80 border-white/40 dark:bg-zinc-900/80 dark:border-white/10
           "
@@ -61,7 +61,7 @@ export default function Navbar() {
             layout 
             transition={springTransition}
             className={`
-              font-black tracking-tighter text-black dark:text-white whitespace-nowrap z-10 
+              z-10 whitespace-nowrap text-sm font-black tracking-tighter text-black dark:text-white sm:text-base
               ${isScrolled 
                 ? "absolute left-5 sm:left-6 text-base md:text-lg" 
                 : "absolute left-1/2 -translate-x-1/2 text-base md:text-lg" 
@@ -101,7 +101,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 10 }}
-                  className="hidden md:block bg-black dark:bg-white text-white dark:text-black px-6 py-2 rounded-full text-[10px] font-bold active:scale-95 transition-all"
+                  className="hidden rounded-full bg-black px-4 py-2 text-[9px] font-bold text-white transition-all active:scale-95 dark:bg-white dark:text-black sm:px-6 md:block"
                 >
                   GET A QUOTE
                 </motion.button>
