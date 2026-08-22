@@ -181,10 +181,10 @@ export default function PortfolioSection() {
         >
           <div>
             {/* 1. ini BAGIAN JUDUL: Ganti teks "Selected Works" dan "Portfolio Terbaru" di bawah ini */}
-            <h2 className="mt-1 mb-1 text-4xl font-black uppercase tracking-tighter text-white sm:text-5xl lg:text-6xl">
+            <h2 className="mt-1 mb-1 text-3xl font-black uppercase leading-tight tracking-tighter text-white sm:text-5xl lg:text-6xl">
               Portfolio{" "}
               <span
-                className="text-transparent"
+                className="mt-1 inline-block whitespace-nowrap text-transparent sm:mt-0"
                 style={{ WebkitTextStroke: "2px #71717a" }}
               >
                 TERBARU
